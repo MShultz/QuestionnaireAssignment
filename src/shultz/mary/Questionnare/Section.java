@@ -1,3 +1,5 @@
+package shultz.mary.Questionnare;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,14 +18,12 @@ public class Section extends QuestionnaireComponent {
         sectionComponents.add(sectionComponent);
     }
 
-    public void remove(QuestionnaireComponent sectionComponent){
-        sectionComponents.remove(sectionComponent);
+    public Iterator<QuestionnaireComponent> iterator(){
+        return sectionComponents.iterator();
     }
-
-    public QuestionnaireComponent getChild(int child){
-        return sectionComponents.get(child);
+    public String getInformation() {
+        return sectionName;
     }
-
     public void print() {
         System.out.println("****" + this.sectionName + "****");
 
@@ -33,7 +33,10 @@ public class Section extends QuestionnaireComponent {
         }
     }
 
+
     private void setSectionName(String sectionName) {
         this.sectionName = sectionName;
     }
+
+
 }
